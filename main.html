@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Troy Paulsson</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
-    <header>
-        <img src = "images/IMG_5165.JPG">
+
+
+    <header class="header">
         <h1>Troy Paulsson's Personal Portfolio (T3P)</h1>
-        <nav>
+        <nav class="nav">
             <ul>
                 <li>About Me</li>
                 <li>Projects</li>
@@ -20,39 +22,45 @@
         </nav>
     </header>
 
+
+
     <main>
-        <section>
-            <div>
-                <h2>Quick Intro</h2>
-                <p>Hi, my name is Troy Paulsson. I currently work as a Business Systems Analyst, working with systems such as Salesforce, Netsuite and Workato.
-                   Throughout my education and career, programming has always been present in one form or another, and my interest in the topic continued to grow
-                   until I could no longer ignore it. The ability to build things fascinates me, and I have so many ideas of things I want to create and topics to explore. Once I keyed in on this,
-                   it became clear that I wanted to learn software development, and I began teaching myself through various courses and means. This Portfolio is the product of one such course, 
-                   and it will work to help share my other projects as well. Please enjoy and feel free to reach out!
+        <section class="intro_container">
+            <div class="section_header"><h2>Quick Intro</h2></div>
+            <div class="intro">
+                <img src = "images/IMG_5165.JPG" id="profile_photo">
+                <p id="intro_paragraph">Hi, my name is Troy Paulsson. I currently work as a Business Systems Analyst, working with systems such as Salesforce, Netsuite and Workato.
+                    Throughout my education and career, programming has always been present in one form or another, and my interest in the topic continued to grow
+                    until I could no longer ignore it. The ability to build things fascinates me, and I have so many ideas of things I want to create and topics to explore. Once I keyed in on this,
+                    it became clear that I wanted to learn software development, and I began teaching myself through various courses and means. This Portfolio is the product of one such course, 
+                    and it will work to help share my other projects as well. Please enjoy and feel free to reach out!
                 </p>
             </div>
         </section>
 
         <section>
-            <h2>Projects</h2>
-            <div>
-                <div>
+            <h2 class="section_header">Projects</h2>
+            <div class="project_container">
+
+                <div id="project_1" class="project">
                     <img>
-                    <h3>Project 1</h3>
-                    <p>Quick blurb</p>
+                    <h3 class="project_title">Project 1</h3>
+                    <p class="project_blurb">Quick blurb</p>
                 </div>
-                <div>
+                <div id="project_2" class="project">
                     <img>
-                    <h3>Project 2</h3>
-                    <p>Quick blurb</p>
+                    <h3 class="project_title">Project 2</h3>
+                    <p class="project_blurb">Quick blurb</p>
                 </div>
-                <div>
+                <div id="project_3" class="project">
                     <img>
-                    <h3>Project 3</h3>
-                    <p>Quick blurb</p>
+                    <h3 class="project_title">Project 3</h3>
+                    <p class="project_blurb">Quick blurb</p>
                 </div>
+
             </div>
         </section>
+
 
         <section>
             <h2>Skills</h2>
