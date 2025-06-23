@@ -1,10 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Troy Paulsson</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 </head>
+
+
+
 <body>
-    
+
+    <!-- Top color bar -->
+    <div id="top_bar_style"></div>
+
+    <!-- Hidden Nav that appears on scroll -->
+    <nav id="nav_bar_onscroll">
+
+    </nav>
+
+    <!-- First block of static nav and intro photo + text -->
+    <div id="first_block">
+        <!-- Static Nav -->
+        <div class="nav">
+            <img src="./images/logo.png" id="logo">
+            <a class="nav_item">Projects</a>
+            <a class="nav_item">Resume</a>
+            <span id="contact_me" class="nav_item">Contact Me</span>
+        </div>
+
+        <!-- Picture and quick blurb -->
+        <div class="intro">
+            <img src="./images/san_jose_photo_troy_cropped.png" id="profile_photo">
+            <div class = "intro_text text">
+                Hey there, I'm <span id="name">Troy Paulsson.</span> Check out my stuff!
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Work -->
+     <div class="featured_container">
+        <div class="text featured_text">Featured Work</div>
+        <div class="featured_projects"></div>
+     </div>
+
 </body>
-</html>
