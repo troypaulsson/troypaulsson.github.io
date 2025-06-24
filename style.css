@@ -16,7 +16,9 @@ body {
 }
 
 #first_block{
-    padding:5rem;
+    /* padding:4rem; */
+    padding: 1rem 25rem 4rem 25rem;
+    background-color: #EFE3C2;
 }
 
 .nav {
@@ -32,6 +34,7 @@ body {
 
 #contact_me {
     grid-column: 11 / span 2;
+    text-align: right;
 }
 
 .nav_item {
@@ -75,4 +78,45 @@ body {
 .featured_text {
     color: #EFE3C2;
     font-weight: 900;
+    padding: 4rem;
+    padding-bottom:0;
+}
+
+.featured_projects {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    padding: 4rem;
+    padding-top:2rem;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+    border: 0.5rem solid #3E7B27;
+    border-radius: 10%;
+    margin: 3rem;
+}
+
+.project_image {
+    border-radius: 10%;
+    height: 300px;
+}
+
+.project_title {
+    text-align: center;
+    color: #EFE3C2;
+    width: 25rem;
+    margin-bottom: 0;
+    font-size: 2rem;
+}
+
+.project_blurb {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #85A947;
+    width: 25rem;
+    height: auto;
 }
