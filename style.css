@@ -29,11 +29,11 @@ body {
 
 #logo {
     grid-row: 1 / span 1;
-    width:100%;
+    width:80px;
 }
 
 #contact_me {
-    grid-column: 11 / span 2;
+    grid-column: 7 / span 5;
     text-align: right;
 }
 
@@ -45,6 +45,17 @@ body {
     font-family: "Ubuntu", sans-serif;
     font-weight: 700;
     font-style: normal;
+}
+
+.static_nav {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.static_nav_show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .intro {
