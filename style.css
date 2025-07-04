@@ -42,7 +42,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 2rem;
-  max-width: 1500px; /* or any value that matches your design */
+  max-width: 80%; /* or any value that matches your design */
   margin: 0 auto;    /* center the nav content */
 }
 
