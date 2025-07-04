@@ -26,15 +26,26 @@
     <div id="first_block">
         <!-- Static Nav -->
         <div class="nav">
-            <img src="./images/logo.png" id="logo" class="static_nav">
-            <a class="nav_item static_nav">Projects</a>
-            <a class="nav_item static_nav">Resume</a>
-            <span id="contact_me" class="nav_item">Contact Me</span>
+            <div class="left_nav">
+                <img src="./images/logo.png" id="logo" class="static_nav">
+                <div class="nav_item_container static_nav" id="nav_proj_container">
+                    
+                    <!-- <span class="text_highlight static_nav"></span> -->
+                    <a class="nav_item static_nav">Projects</a>
+                </div>
+                <div class="nav_item_container static_nav" id="nav_res_container">
+                    <!-- <span class="text_highlight static_nav"></span> -->
+                    <a class="nav_item static_nav">Resume</a>
+                </div>
+            </div>
+            <div class="right_nav static_nav">
+                <span id="contact_me" class="nav_item btn-5">Contact Me</span>
+            </div>
         </div>
 
         <!-- Picture and quick blurb -->
         <div class="intro">
-            <img src="./images/san_jose_photo_troy_cropped.png" id="profile_photo">
+            <img src="./images/san_jose_photo_troy_cropped.png" id="profile_photo" class="p_photo">
             <div class = "intro_text text">
                 Hey there, I'm <span id="name">Troy Paulsson.</span> Check out my stuff!
             </div>

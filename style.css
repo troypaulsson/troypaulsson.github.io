@@ -17,45 +17,117 @@ body {
 
 #first_block{
     /* padding:4rem; */
-    padding: 1rem 25rem 4rem 25rem;
+    padding: 4% 20% 4% 20%;
     background-color: #EFE3C2;
 }
 
 .nav {
-    display:grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 20px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left_nav {
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.right_nav {
+    display: flex;
+    align-items: center;
 }
 
 #logo {
-    grid-row: 1 / span 1;
     width:80px;
 }
 
 #contact_me {
-    grid-column: 7 / span 5;
-    text-align: right;
+    text-align: center;
+    
 }
 
+.btn-5 {
+  border: 2px solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  outline: 1px solid;
+  outline-color: rgba(5, 5, 5, 0.5);
+  outline-offset: 0px;
+  text-shadow: none;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+} 
+
+.btn-5:hover {
+  border: 1px solid;
+  box-shadow: inset 0 0 20px #3E7B27, 0 0 20px #3E7B27;
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 15px;
+  text-shadow: 1px 1px 2px #427388;
+  cursor: pointer;
+  
+}
+
+.nav_item_container {
+    display:flex;
+    position: relative;
+    margin-left: 10%;
+    cursor:pointer;
+    background-color: transparent;
+    
+}
+
+.nav_item_container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom:0;
+  height: 100%;
+  width: 5px;
+  background-color: #3E7B27;
+  transition: width 0.3s ease;
+  z-index: 0; /* Make sure it's behind the text */
+  transition: width 0.3s ease;
+  
+}
+
+.nav_item_container:hover::before {
+  width: 100%;
+}
+
+.nav_item_container:hover .nav_item {
+    color: #EFE3C2;
+}
+
+/* .text_highlight {
+    width: 5px;
+    height:auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #3E7B27;
+} */
 .nav_item {
     padding: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 800;
     align-content: center;
     font-family: "Ubuntu", sans-serif;
-    font-weight: 700;
+    font-weight: 900;
     font-style: normal;
+    position:relative;
+    z-index: 1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav_item_container:hover .text_highlight {
+  width: 100%;
 }
 
 .static_nav {
     opacity: 0;
     transform: translateY(-20px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-.static_nav_show {
-    opacity: 1;
-    transform: translateY(0);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
 }
 
 .intro {
@@ -66,6 +138,11 @@ body {
     margin-bottom: 1.5rem;
 }
 
+.p_photo {
+    opacity: 0;
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
 #profile_photo {
     border: 1.5rem solid #123524;
     border-radius: 100%;
@@ -73,6 +150,19 @@ body {
     height: auto;
     margin-bottom: 6rem;
 }
+
+.intro_text {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.static_nav_show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 
 #name {
     color: #3E7B27;
