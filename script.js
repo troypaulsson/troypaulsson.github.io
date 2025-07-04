@@ -40,4 +40,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }, (index + 1)*200);
         
     });
+
+    // On Scroll Nav Bar
+    const nav = document.querySelector('.nav');
+    const scrollNav = document.getElementById('nav_bar_onscroll');
+    const navTop = nav.offsetTop + nav.offsetHeight;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > navTop) {
+        scrollNav.style.top = '0';
+        } else {
+        scrollNav.style.top = '-84px';
+        }
+    });
 });
