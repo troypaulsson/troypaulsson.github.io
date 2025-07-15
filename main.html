@@ -14,23 +14,20 @@
 
 <body>
 
-    <!-- Top color bar -->
-    <!-- <div id="top_bar_style"></div> -->
-
     <!-- Hidden Nav that appears on scroll -->
     <nav id="nav_bar_onscroll">
         <div class="nav_scroll_inner">
             <div class="left_nav">
                 <img src="./images/logo_2.png" id="logo">
                 <div class="nav_item_container_scroll">
-                <a class="nav_item">Projects</a>
+                <a class="nav_item" id="scroll_nav_proj_button">Projects</a>
                 </div>
                 <div class="nav_item_container_scroll">
-                <a class="nav_item">Resume</a>
+                <a href="./Paulsson_Troy_CV_2024.pdf" target="_blank" type="application/pdf" title="View PDF" class="nav_item">Resume</a>
                 </div>
             </div>
             <div class="right_nav">
-                <span class="nav_item btn-6">Contact Me</span>
+                <a href="https://www.linkedin.com/in/troy-paulsson/"class="nav_item btn-6">LinkedIn</a>
             </div>
         </div>
     </nav>
@@ -44,15 +41,15 @@
                 <div class="nav_item_container static_nav" id="nav_proj_container">
                     
                     <!-- <span class="text_highlight static_nav"></span> -->
-                    <a class="nav_item static_nav">Projects</a>
+                    <a  class="nav_item static_nav" id="static_nav_proj_button">Projects</a>
                 </div>
                 <div class="nav_item_container static_nav" id="nav_res_container">
                     <!-- <span class="text_highlight static_nav"></span> -->
-                    <a class="nav_item static_nav">Resume</a>
+                    <a href="./Paulsson_Troy_CV_2024.pdf" target="_blank" type="application/pdf" title="View PDF" class="nav_item static_nav">Resume</a>
                 </div>
             </div>
             <div class="right_nav static_nav">
-                <span id="contact_me" class="nav_item btn-5">Contact Me</span>
+                <a href="https://www.linkedin.com/in/troy-paulsson/" id="contact_me" class="nav_item btn-5">LinkedIn</a>
             </div>
         </div>
 
@@ -68,24 +65,37 @@
     <!-- Featured Work -->
      <div class="featured_container">
         <div class="text featured_text">Featured Work</div>
-        <div class="featured_projects">
-            <div class="project">
-                <img src="./images/youtube_pants.png" class="project_image">
-                <h3 class="project_title text">Youtube Pants</h3>
-                <span class="project_blurb text">Chrome Extension</span>
-            </div>
-            <div class="project">
-                <img src="./images/nfl_database.png" class="project_image">
-                <h3 class="project_title text">NFL Database</h3>
-                <span class="project_blurb text">End to End Database</span>
-            </div>
+        <div class="featured_projects" id="featured">
+
+            <a href="https://github.com/RobinsonFred/youtubepants" target="_blank">
+                <div class="project">
+                    <img src="./images/youtube_pants.png" class="project_image">
+                    <div class="project_text">
+                        <h3 class="project_title text">Youtube Pants</h3>
+                        <span class="project_blurb text">Chrome Extension</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://github.com/didyouseegrant/bigtymin-nfl-database" target="_blank">
+                <div class="project">
+                    <img src="./images/nfl_database.png" class="project_image">
+                    <div class="project_text">
+                        <h3 class="project_title text">NFL Database</h3>
+                        <span class="project_blurb text">End to End Database</span>
+                    </div>
+                </div>
+            </a>
+
             <div class="project">
                 <img src="./images/display_that_back.png" class="project_image">
-                <h3 class="project_title text">Display That Back</h3>
-                <span class="project_blurb text">Software+Hardware</span>
+                <div class="project_text">
+                    <h3 class="project_title text">Display That Back</h3>
+                    <span class="project_blurb text">Software+Hardware</span>
+                </div>
             </div>
 
         </div>
      </div>
-    <script src = "./script.js"></script>
+    <script src="./script.js"></script>
 </body>

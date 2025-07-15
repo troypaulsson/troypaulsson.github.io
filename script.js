@@ -53,4 +53,17 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollNav.style.top = '-84px';
         }
     });
+
+
+    // Projects button scrolls to the featured works part (on scroll nav)
+    document.getElementById('scroll_nav_proj_button').addEventListener('click', () => {
+        document.getElementById('featured').scrollIntoView({ behavior: 'smooth' }); // Scrolls smoothly to the element with ID "myContent"
+    });
+
+    // Same as above but static nav
+    document.getElementById('static_nav_proj_button').addEventListener('click', () => {
+        document.getElementById('featured').scrollIntoView({ behavior: 'smooth' }); // Scrolls smoothly to the element with ID "myContent"
+    });
 });
+
+

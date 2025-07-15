@@ -2,6 +2,10 @@ body {
     margin:0;
 }
 
+a {
+    text-decoration: none;
+}
+
 .text {
     font-family: "Ubuntu", sans-serif;
     font-weight: 700;
@@ -93,9 +97,9 @@ body {
 
 .btn-6:hover {
   /* box-shadow: inset 0 0 20px #3E7B27, 0 0 20px #3E7B27; */
-  box-shadow: inset 0 0 0 2em #EFE3C2;
+  box-shadow: inset 0 0 0 2em #123524;
   cursor: pointer;
-  color: black;
+  /* color: black; */
   border-color: black;
   /* transition: 0.5s ease; */
 }
@@ -184,7 +188,12 @@ body {
     position:relative;
     z-index: 1;
     text-decoration: none;
+    color: inherit;
     /* transition: color 0.3s ease; */
+}
+
+.btn-6 {
+    color: #EFE3C2;
 }
 
 .nav_item_container:hover .text_highlight {
@@ -262,9 +271,20 @@ body {
     display: flex;
     flex-direction: column;
     padding: 4rem;
-    border: 0.5rem solid #3E7B27;
+    border: 0.5rem solid #123524;
     border-radius: 10%;
     margin: 3rem;
+    background-color: #EFE3C2;
+    transition: opacity 1.2s ease-out, transform 0.7s ease-out;
+}
+
+.project:hover {
+    cursor: pointer;
+    border-color: #3E7B27;
+    transform: translateY(-20px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+
+
 }
 
 .project_image {
@@ -272,9 +292,13 @@ body {
     height: 300px;
 }
 
+.project_text {
+
+}
+
 .project_title {
     text-align: center;
-    color: #EFE3C2;
+    color: #123524;
     width: 25rem;
     margin-bottom: 0;
     font-size: 2rem;
@@ -284,7 +308,8 @@ body {
     margin-top: 2rem;
     text-align: center;
     font-size: 1.5rem;
-    color: #85A947;
+    color: #3E7B27;
     width: 25rem;
     height: auto;
+    display: block;
 }
