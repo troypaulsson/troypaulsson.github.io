@@ -356,7 +356,7 @@ a {
 }
 
 @media (max-width: 768px) {
-  .left_nav, .right_nav {
+  .nav_item_container_scroll, .nav_item_container, .right_nav {
     display: none; /* hide normal nav items */
   }
 
@@ -406,7 +406,6 @@ a {
 .nav_scroll_inner {
   position: relative;
 }
-
 
 #hamburger_menu_static {
   color: #123524; /* dark green, or whatever contrasts with your static nav bg */
