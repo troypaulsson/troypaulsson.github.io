@@ -220,11 +220,13 @@ a {
 }
 
 #profile_photo {
+    width: 400px;
+    height: 500px; /* fixed height */
+    object-fit: fill; /* stretches to fit both width and height */
     border: 1.5rem solid #123524;
     border-radius: 100%;
-    width:400px;
-    height: auto;
     margin-bottom: 6rem;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .intro_text {
@@ -259,7 +261,7 @@ a {
     padding-bottom:0;
 }
 
-.featured_projects {
+/* .featured_projects {
     display: flex;
     justify-content: center;
     height: auto;
@@ -276,6 +278,26 @@ a {
     margin: 3rem;
     background-color: #EFE3C2;
     transition: opacity 1.2s ease-out, transform 0.7s ease-out;
+} */
+
+.featured_projects {
+    display: flex;
+    flex-wrap: wrap; /* allow wrapping on smaller screens */
+    justify-content: center;
+    gap: 2rem; /* cleaner than padding + margin */
+    padding: 4rem 2rem 2rem 2rem;
+}
+
+/* Individual project card */
+.project {
+    flex: 1 1 300px;         /* responsive sizing: grow, shrink, base width */
+    max-width: 400px;
+    min-width: 200px;
+    padding: 2rem;
+    border: 0.5rem solid #123524;
+    border-radius: 10%;
+    background-color: #EFE3C2;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out, border-color 0.7s ease-out;
 }
 
 .project:hover {
@@ -288,8 +310,12 @@ a {
 }
 
 .project_image {
+    width: 100%;
+    height: 400px;               /* fixed height */
+    object-fit: cover;           /* maintain aspect ratio & crop excess */
     border-radius: 10%;
-    height: 300px;
+    display: block;
+    margin: 0 auto;
 }
 
 .project_text {
@@ -312,4 +338,77 @@ a {
     width: 25rem;
     height: auto;
     display: block;
+}
+
+/* Hide on desktop */
+.hamburger, .mobile_menu {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+
+    #first_block {
+        /* padding:4rem; */
+        padding: 4% 10% 4% 10%;
+        background-color: #EFE3C2;
+    }
+
+}
+
+@media (max-width: 768px) {
+  .left_nav, .right_nav {
+    display: none; /* hide normal nav items */
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #EFE3C2;
+    z-index: 1001;
+  }
+
+  .mobile_menu {
+    display: none;
+    flex-direction: column;
+    background-color: #3E7B27;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 1rem 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .mobile_menu.show {
+    display: flex;
+  }
+
+  .mobile_menu .nav_item {
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: black;
+    border: 2px solid black; /* border around each item */
+    margin: 0.25rem 1rem;       /* spacing between items */
+    border-radius: 8px;         /* optional: rounded corners */
+    background-color: #85A947;  /* match menu background */
+  }
+
+  .mobile_menu .nav_item:hover {
+    background-color: #123524;
+    color: #EFE3C2;
+    cursor: pointer;
+  }
+
+.nav,
+.nav_scroll_inner {
+  position: relative;
+}
+
+
+#hamburger_menu_static {
+  color: #123524; /* dark green, or whatever contrasts with your static nav bg */
+}
 }
