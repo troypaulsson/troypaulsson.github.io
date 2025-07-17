@@ -214,18 +214,32 @@ a {
     margin-bottom: 1.5rem;
 }
 
+.profile_photo_wrapper {
+    border: 1.5rem solid #123524;
+    border-radius: 100%;
+    width: 400px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6rem;
+    box-sizing: border-box;
+}
+
+
 .p_photo {
-    opacity: 0;
-    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    object-fit: fill;
+    transition: opacity 0.3s ease-in-out;
 }
 
 #profile_photo {
-    width: 400px;
-    height: 500px; /* fixed height */
-    object-fit: fill; /* stretches to fit both width and height */
-    border: 1.5rem solid #123524;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
     border-radius: 100%;
-    margin-bottom: 6rem;
     transition: opacity 0.3s ease-in-out;
 }
 

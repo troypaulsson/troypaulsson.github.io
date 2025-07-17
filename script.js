@@ -1,17 +1,16 @@
 
 // Profile Photo Interactivity
-let profile_photo = document.getElementById("profile_photo");
+let profileWrapper = document.querySelector(".profile_photo_wrapper");
 
 profile_photo.addEventListener('mouseover', function() {
-    profile_photo.style.cursor = "pointer";
-    profile_photo.style.border = "1.5rem solid #3E7B27";    
+    profileWrapper.style.cursor = "pointer";
+    profileWrapper.style.border = "1.5rem solid #3E7B27";    
 });
 
 profile_photo.addEventListener('mouseout', function() {
-    profile_photo.style.border = "1.5rem solid #123524";
-    profile_photo.style.cursor = "default";
+    profileWrapper.style.border = "1.5rem solid #123524";
+    profileWrapper.style.cursor = "default";
 });
-
 
 // Page Load Stuff
 
