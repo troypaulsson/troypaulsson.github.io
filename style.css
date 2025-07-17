@@ -284,19 +284,21 @@ a {
     display: flex;
     flex-wrap: wrap; /* allow wrapping on smaller screens */
     justify-content: center;
-    gap: 2rem; /* cleaner than padding + margin */
+    gap: 5rem; /* cleaner than padding + margin */
     padding: 4rem 2rem 2rem 2rem;
 }
 
 /* Individual project card */
 .project {
-    flex: 1 1 300px;         /* responsive sizing: grow, shrink, base width */
-    max-width: 400px;
-    min-width: 200px;
-    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #EFE3C2;
     border: 0.5rem solid #123524;
     border-radius: 10%;
-    background-color: #EFE3C2;
+    padding: 2rem;
+    height: 100%;
+    box-sizing: border-box;
     transition: opacity 0.7s ease-out, transform 0.7s ease-out, border-color 0.7s ease-out;
 }
 
@@ -310,22 +312,25 @@ a {
 }
 
 .project_image {
-    width: 100%;
-    height: 400px;               /* fixed height */
+    width: 300px;
+    height: 300px;               /* fixed height */
     object-fit: cover;           /* maintain aspect ratio & crop excess */
     border-radius: 10%;
     display: block;
     margin: 0 auto;
+    border: 0.01rem groove black;
 }
 
 .project_text {
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .project_title {
     text-align: center;
     color: #123524;
-    width: 25rem;
     margin-bottom: 0;
     font-size: 2rem;
 }
@@ -335,9 +340,14 @@ a {
     text-align: center;
     font-size: 1.5rem;
     color: #3E7B27;
-    width: 25rem;
     height: auto;
     display: block;
+}
+
+.project_title,
+.project_blurb {
+    max-width: 100%;
+    width: auto;
 }
 
 /* Hide on desktop */
@@ -353,9 +363,16 @@ a {
         background-color: #EFE3C2;
     }
 
+    .featured_projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
+  .featured_projects {
+    grid-template-columns: 1fr;
+  }
+  
   .nav_item_container_scroll, .nav_item_container, .right_nav {
     display: none; /* hide normal nav items */
   }
