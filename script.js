@@ -1,15 +1,15 @@
 
 // Profile Photo Interactivity
-let profileWrapper = document.querySelector(".profile_photo_wrapper");
+const wrapper = document.querySelector('.profile_photo_wrapper');
 
-profile_photo.addEventListener('mouseover', function() {
-    profileWrapper.style.cursor = "pointer";
-    profileWrapper.style.border = "1.5rem solid #3E7B27";    
+wrapper.addEventListener('mouseover', function () {
+  wrapper.style.border = "1.5rem solid #3E7B27";
+  wrapper.style.cursor = "pointer";
 });
 
-profile_photo.addEventListener('mouseout', function() {
-    profileWrapper.style.border = "1.5rem solid #123524";
-    profileWrapper.style.cursor = "default";
+wrapper.addEventListener('mouseout', function () {
+  wrapper.style.border = "1.5rem solid #123524";
+  wrapper.style.cursor = "default";
 });
 
 // Page Load Stuff
@@ -18,10 +18,16 @@ profile_photo.addEventListener('mouseout', function() {
 document.addEventListener('DOMContentLoaded', function() {
     let navAppearElements = document.querySelectorAll(".static_nav");
     let introAppearElements = document.querySelectorAll(".intro_text");
-    let profilePhoto = document.getElementById("profile_photo");
+    const profileWrapper = document.querySelector(".profile_photo_wrapper"); // NEW
+    const profilePhoto = document.querySelector(".p_photo");
 
     console.log(profilePhoto)
     
+      // Fade in wrapper (border + image)
+    setTimeout(() => {
+        profileWrapper.classList.add("static_nav_show"); // fade in wrapper
+    }, 700);
+
     setTimeout(() => {
         profilePhoto.classList.add("static_nav_show");
     }, 700);
@@ -75,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Profile Photo Cycling
 const defaultImage = './images/san_jose_photo_troy_cropped.png';
-// List of alternate profile photos (not including the default)
 const alternateImages = [
   './images/image_2.png',
   './images/image_3.png',
@@ -85,7 +90,6 @@ const alternateImages = [
   './images/image_7.png'
 ];
 
-// Shuffle once on load
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -98,29 +102,44 @@ shuffle(alternateImages);
 let imageIndex = 0;
 let inCycle = false;
 
-profile_photo.addEventListener('click', function () {
-  profile_photo.style.opacity = 0;
+function crossfadeToNewImage(newSrc) {
+  const newImg = document.createElement("img");
+  newImg.src = newSrc;
+  newImg.className = "p_photo";
+  newImg.style.opacity = 0;
 
+  wrapper.appendChild(newImg);
+
+  // Fade-in
+  requestAnimationFrame(() => {
+    newImg.style.opacity = 1;
+  });
+
+  // Remove old image after transition
   setTimeout(() => {
-    if (!inCycle) {
-      profile_photo.setAttribute('src', alternateImages[imageIndex]);
-      inCycle = true;
+    const images = wrapper.querySelectorAll(".p_photo");
+    if (images.length > 1) wrapper.removeChild(images[0]);
+  }, 400);
+}
+
+wrapper.addEventListener("click", () => {
+  let newSrc;
+  if (!inCycle) {
+    newSrc = alternateImages[imageIndex];
+    inCycle = true;
+  } else {
+    imageIndex++;
+    if (imageIndex < alternateImages.length) {
+      newSrc = alternateImages[imageIndex];
     } else {
-      imageIndex++;
-
-      if (imageIndex < alternateImages.length) {
-        profile_photo.setAttribute('src', alternateImages[imageIndex]);
-      } else {
-        // Reached end of cycle — return to default and reset
-        profile_photo.setAttribute('src', defaultImage);
-        imageIndex = 0;
-        inCycle = false;
-        shuffle(alternateImages); // optional: re-shuffle each cycle
-      }
+      newSrc = defaultImage;
+      imageIndex = 0;
+      inCycle = false;
+      shuffle(alternateImages);
     }
+  }
 
-    profile_photo.style.opacity = 1;
-  }, 300); // matches your CSS transition time (0.3s)
+  crossfadeToNewImage(newSrc);
 });
 
 //Nav on smaller screens:

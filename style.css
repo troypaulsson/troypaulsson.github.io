@@ -219,20 +219,25 @@ a {
     border-radius: 100%;
     width: 400px;
     height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-bottom: 6rem;
     box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+      /* existing styles ... */
+    opacity: 0;                           /* start hidden */
+    transform: translateY(20px);          /* slight upward movement */
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
 }
 
 
 .p_photo {
-    width: 100%;
-    height: 100%;
-    border-radius: 100%;
-    object-fit: fill;
-    transition: opacity 0.3s ease-in-out;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 100%;
+  transition: opacity 0.4s ease-in-out;
+  opacity: 0; /* Start hidden */
 }
 
 #profile_photo {
